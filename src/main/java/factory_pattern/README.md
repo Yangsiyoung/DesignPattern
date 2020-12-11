@@ -157,3 +157,83 @@ public void factoryTest() {
     assertEquals("안녕하세요", Factory.getGreetingInstance("unknownType").text());
 }
 ```
+
+아래와 같이 타입에 들어가는 문자열을 상수화 시키는 것도 좋은 방법이다.
+* Factory.java
+
+```
+public class Factory {
+    public static final String KOREAN = "ko";
+    public static final String ENGLISH = "en";
+
+    public static Greeting getGreetingInstance(String type) {
+        switch (type) {
+            case KOREAN:
+                return new Korean();
+            case ENGLISH:
+                return new English();
+            default:
+                return new Korean();
+        }
+    }
+    
+}
+```
+
+* Unit Test
+```
+@Test
+public void factoryTest() {
+    assertEquals("안녕하세요", Factory.getGreetingInstance(factory_pattern.chapter01.chapter1_5_4.Factory.KOREAN).text());
+    assertEquals("Hello", Factory.getGreetingInstance(factory_pattern.chapter01.chapter1_5_4.Factory.ENGLISH).text());
+    assertEquals("안녕하세요", Factory.getGreetingInstance("unknownType").text());
+}
+```
+
+## 단순 팩토리
+별도의 Factory 생성을 하지 않고, 자신의 객체에 필요한 객체를 생성하는 전용 메서드 추가하는 방법  
+(정적 팩토리 패턴이라고도 부름)
+
+* Hello.java
+
+```
+public class Hello {
+    public static final String KOREAN = "ko";
+    public static final String ENGLISH = "en";
+
+    public String greeting(String type) {
+        return factory(type).text();
+    }
+
+    public static Greeting factory(String type) {
+        switch (type) {
+            case KOREAN:
+                return new Korean();
+            case ENGLISH:
+                return new English();
+            default:
+                return new Korean();
+        }
+    }
+}
+```
+* Unit Test
+```
+@Test
+public void testGreeting() {
+    Hello hello = new Hello();
+    assertEquals("안녕하세요", hello.greeting(Hello.KOREAN));
+    assertEquals("Hello", hello.greeting(Hello.ENGLISH));
+    assertEquals("안녕하세요", hello.greeting("unknown"));
+}
+```
+
+# 팩토리 패턴의 장점  
+1. 생성과 관련된 모든 처리를 별도의 클래스에 위임할 수 있다.  
+2. 클래스 이름이 변경되어도 클래스가 생성되는 곳을 하나씩 찾아서 수정할 필요가 없기때문에  
+   유연성과 확장성이 개선된다.  
+3. 어떤 객체들이 생성될지 모르는 초기 단계 코드에 매우 유용하다.  
+
+# 팩토리 패턴의 단점  
+별도의 클래스가 생기기 때문에 관리할 클래스가 늘어난다는 단점이 있다.  
+
