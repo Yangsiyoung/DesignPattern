@@ -11,4 +11,74 @@
 잘 기억하자, 팩토리 패턴과 팩토리 메서드 패턴의 차이는 **추상화**이다.  
 
 
+* Factory.java
+```
+public abstract class Factory {
+    public static final String SAMSUNG = "samsung";
+    public static final String LG = "lg";
+
+    public final Product create(String modelType) {
+        return createProduct(modelType);
+    }
+
+    public abstract Product createProduct(String modelType);
+}
+```
+
+* ProductFactory.java
+```
+public class ProductFactory extends Factory{
+    @Override
+    public Product createProduct(String modelType) {
+        switch (modelType) {
+            case Factory.SAMSUNG:
+                return new SamsungProduct();
+            case Factory.LG:
+                return new LGProduct();
+            default:
+                return new SamsungProduct();
+        }
+    }
+}
+```
+
+* Product.java
+```
+public interface Product {
+    public String name();
+}
+```
+
+* SamsungProduct.java
+```
+public class SamsungProduct implements Product {
+    @Override
+    public String name() {
+        return "SamsungProduct";
+    }
+}
+```
+
+* LGProduct.java
+```
+public class LGProduct implements Product {
+    @Override
+    public String name() {
+        return "LGProduct";
+    }
+}
+```
+
+* Unit Test
+```
+@Test
+public void testCreateProduct() {
+    SamsungProduct samsungProduct = new SamsungProduct();
+    LGProduct lgProduct = new LGProduct();
+    ProductFactory productFactory = new ProductFactory();
+    assertEquals(samsungProduct.name(), productFactory.create(Factory.SAMSUNG).name());
+    assertEquals(lgProduct.name(), productFactory.create(Factory.LG).name());
+    assertNotEquals(samsungProduct.name(), productFactory.create(Factory.LG).name());
+}
+```
 
