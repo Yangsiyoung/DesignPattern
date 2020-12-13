@@ -1,4 +1,4 @@
-package factory_pattern;
+package factory_pattern.original;
 
 public class Hello {
     public String greeting() {
