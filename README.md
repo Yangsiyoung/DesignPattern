@@ -26,57 +26,57 @@ Design Pattern
 
 # 구조 패턴
 ## 1. 어댑터 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/adapter_pattern)  
 
 ## 2. 브리지 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/bridge_pattern)  
 
 ## 3. 복합체 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/composite_pattern)  
 
 ## 4. 장식자 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/decorator_pattern)  
 
 ## 5. 파사드 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/facade_pattern)  
 
 ## 6. 플라이웨이트 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/flyweight_pattern)  
 
 ## 7. 프록시 패턴
-[보러가기]()  
+[보러가기](https://github.com/Yangsiyoung/DesignPattern/tree/main/src/main/java/structural_pattern/proxy_pattern)  
 
 
 # 행동 패턴
 ## 1. 반복자 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 2. 명령 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 3. 방문자 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 4. 체인 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 5. 감시자 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 6. 중재자 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 7. 상태 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 8. 메멘토 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 9. 템플릿 메서드 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 10. 전략 패턴
-[보러가기]()  
+[공부 중]()  
 
 ## 11. 인터프리터 패턴
-[보러가기]()  
+[공부 중]()  
